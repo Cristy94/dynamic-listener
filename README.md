@@ -4,6 +4,9 @@ A quick pure JavaScript implementation that allows to add an event listener that
 
 The minified library has only **573 bytes**.
 
+# Limitations
+You should use `focusout` event instead of `blur`, as the `blur` event does not bubble.
+
 # Usage
 Include the library and call `addDynamicEventListener` to create a new event listener.
 ```HTML
