@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="head1">Hello!</div>
+    <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+        <li>test4</li>
+        <li>test5</li>
+    </ul>
+
+    <script src="dynamicListener.min.js"></script>
+    <script>
+        var ul =  document.getElementsByTagName('ul')[0];
+        function addLi() {
+            var li = document.createElement('li');
+            li.innerText = 'NEW';
+            ul.appendChild(li);
+        }
+
+        // Test the listener
+        addDynamicEventListener(document.body, 'click', 'li, #head1', function (e) {
+            alert(e.target.innerText);
+        });
+    </script>
+    <button onClick="addLi()">Add li</button>
+</body>
+</html>
