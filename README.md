@@ -18,9 +18,8 @@ addDynamicEventListener(document.body, 'click', '.myClass, li', function (e) {
 ```
 
 ### API
-##### globalSope.addDynamicEventListener(rootElement, eventType, selector, callback, options) 
+##### addDynamicEventListener(rootElement, eventType, selector, callback, options) 
 ###### Parameters  
-#
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | rootElement | `Element`  | The root element to add the linster too. |
