@@ -25,7 +25,7 @@ addDynamicEventListener(document.body, 'click', '.myClass, li', function (e) {
 ###### Parameters  
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| rootElement | `Element`  | The root element to add the linster too. |
+| rootElement | `Element`  | The root element to add the listener too. |
 | eventType | `string`  | The event type to listen for. |
 | selector | `string`  | The selector that should match the dynamic elements. |
 | callback | `function`  | The function to call when an event occurs on the given selector. |
