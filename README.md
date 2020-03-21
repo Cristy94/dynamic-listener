@@ -47,4 +47,4 @@ No restrictions. Feel free to use it in any project you want.
 
 # Check out my analytics script
 [![userTrack](https://www.usertrack.net/img/usertrack_logo.svg)](https://www.usertrack.net)  
-Private analytics plaform with heatmaps and full session recordings support.
+Self-hosted analytics plaform with heatmaps and full session recordings.
