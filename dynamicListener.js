@@ -40,6 +40,7 @@
     function getConditionalCallback(selector, callback) {
         return function(e) {
             if(e.target && e.target.matches(selector)) {
+                e.delegatedTarget = e.target;
                 callback.apply(this, arguments);
                 return;
             }
@@ -50,6 +51,7 @@
                 var el = path[i];
                 if (el.matches(selector)) {
                     // Call callback for all elements on the path that match the selector
+                    e.delegatedTarget = el;
                     callback.apply(this, arguments);  
                 }
                 // We reached parent node, stop
