@@ -2,7 +2,7 @@
 
 A quick pure JavaScript implementation that allows to add an event listener that also works on elements dynamically created. The functionality is similar to `jQuery.on()`.
 
-The minified library has only **573 bytes**.
+The minified library has only **751 Bytes**.
 
 # Limitations
 You should use `focusout` event instead of `blur`, as the `blur` event does not bubble.
