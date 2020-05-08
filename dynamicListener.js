@@ -39,9 +39,24 @@
      */
     function getConditionalCallback(selector, callback) {
         return function(e) {
-            if(!e.target) return;
-            if(!e.target.matches(selector)) return;
-            callback.apply(this, arguments);
+            if(e.target && e.target.matches(selector)) {
+                callback.apply(this, arguments);
+                return;
+            }
+            // Not clicked directly, check bubble path
+            var path = event.path || (event.composedPath && event.composedPath());
+            if(!path) return;
+            for(var i = 0; i < path.length; ++i) {
+                var el = path[i];
+                if (el.matches(selector)) {
+                    // Call callback for all elements on the path that match the selector
+                    callback.apply(this, arguments);  
+                }
+                // We reached parent node, stop
+                if (el === e.currentTarget) {
+                    return;
+                }
+            }
         };
     }
 
