@@ -2,7 +2,7 @@
 
 A quick pure JavaScript implementation that allows to add an event listener that also works on elements dynamically created. The functionality is similar to `jQuery.on()`.
 
-The minified library has only **751 Bytes**.
+The minified library has only **806 Bytes**.
 
 # Limitations
 You should use `focusout` event instead of `blur`, as the `blur` event does not bubble.
@@ -19,6 +19,8 @@ addDynamicEventListener(document.body, 'click', '.myClass, li', function (e) {
 });
 </script>
 ```
+
+**Note:** You will have to use `event.delegatedTarget` in your callbacks to get the element that matches the selector (as `event.target` could be a child of this element and `event.currentTarget` is the root on which the listener was attached to).
 
 ### API
 ##### addDynamicEventListener(rootElement, eventType, selector, callback, options) 
