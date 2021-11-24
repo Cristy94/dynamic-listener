@@ -2,7 +2,7 @@
     'use strict';
 
     /**
-     * Including this file adds the `addDynamicEventListener` to the global scope.
+     * Including this file adds the `addDynamicEventListener` function to the global scope.
      * 
      * The dynamic listener gets an extra `selector` parameter that only calls the callback
      * if the target element matches the selector.
