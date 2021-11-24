@@ -2,12 +2,12 @@
     'use strict';
 
     /**
-     * Including this file adds the `addDynamicListener` to the ELement prototype.
+     * Including this file adds the `addDynamicEventListener` to the global scope.
      * 
      * The dynamic listener gets an extra `selector` parameter that only calls the callback
      * if the target element matches the selector.
      * 
-     * The listener has to be added to the container/root element and the selector should match
+     * The listener has to be added to the container/root element and the selector must match
      * the elements that should trigger the event.
      * 
      * Browser support: IE9+
