@@ -1,6 +1,6 @@
 # Dynamic event listener
 
-A pure JavaScript implementation to enable adding event listeners that work on elements dynamically created. The functionality is similar to `jQuery.on()`.
+A pure JavaScript implementation to enable adding event listeners that work on **dynamically created** elements. The functionality is similar to `jQuery.on()`.
 
 The minified library has only **643 Bytes**.
 
