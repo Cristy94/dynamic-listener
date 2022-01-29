@@ -10,25 +10,8 @@
      * The listener has to be added to the container/root element and the selector must match
      * the elements that should trigger the event.
      * 
-     * Browser support: IE9+
+     * Browser support: IE11+
      */
-
-    // Polyfil Element.matches
-    // https://developer.mozilla.org/en/docs/Web/API/Element/matches#Polyfill
-    if (!Element.prototype.matches) {
-        Element.prototype.matches = 
-            Element.prototype.matchesSelector || 
-            Element.prototype.mozMatchesSelector ||
-            Element.prototype.msMatchesSelector || 
-            Element.prototype.oMatchesSelector || 
-            Element.prototype.webkitMatchesSelector ||
-            function(s) {
-                var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-                    i = matches.length;
-                while (--i >= 0 && matches.item(i) !== this) {}
-                return i > -1;            
-            };
-    }
 
     /**
      * Returns a modified callback function that calls the
