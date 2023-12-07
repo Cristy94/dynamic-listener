@@ -55,6 +55,7 @@
      * @param {boolean|object} options Passed as the regular `options` parameter to the addEventListener function
      *                                 Set to `true` to use capture.
      *                                 Usually used as an object to add the listener as `passive`
+     * @return {function} A function that can be called to remove the event listener.
      */
     globalSope.addDynamicEventListener = function (rootElement, eventType, selector, callback, options) {
         var cb = getConditionalCallback(selector, callback);
