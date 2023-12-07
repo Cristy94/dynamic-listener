@@ -15,9 +15,12 @@ Include the library and call `addDynamicEventListener` to create a new event lis
 <script>
 // Any `li` or element with class `.myClass` will trigger the callback, 
 // even elements created dynamically after the event listener was created.
-addDynamicEventListener(document.body, 'click', '.myClass, li', function (e) {
+var removeListener = addDynamicEventListener(document.body, 'click', '.myClass, li', function (e) {
     console.log('Clicked', e.target.innerText);
 });
+
+// Later
+removeListener();
 </script>
 ```
 
@@ -36,13 +39,17 @@ addDynamicEventListener(document.body, 'click', '.myClass, li', function (e) {
 
 ##### Returns
 
-- `Void`
+- `Function` - removeListener - Callback that removes the previously attached listener.
 
 # Browser support
 Same as `addEventListener` (consider it  to be IE9+).
 
 # How it works
 The script uses the [Element.matches()](https://developer.mozilla.org/en/docs/Web/API/Element/matches) method to test the target element against the given selector. When an event is triggered the callback is only called if the target element matches the selector given.
+
+# Updates
+
+* **7 December 2023** -  Return a remove listener callback.
 
 # License
 No restrictions. Feel free to use it in any project you want.
