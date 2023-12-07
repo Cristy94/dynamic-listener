@@ -57,6 +57,8 @@
      *                                 Usually used as an object to add the listener as `passive`
      */
     globalSope.addDynamicEventListener = function (rootElement, eventType, selector, callback, options) {
-        rootElement.addEventListener(eventType, getConditionalCallback(selector, callback), options);
+        var cb = getConditionalCallback(selector, callback);
+        rootElement.addEventListener(eventType, cb, options);
+        return rootElement.removeEventListener.bind(rootElement, eventType, cb, options);
     };
 })(this);
